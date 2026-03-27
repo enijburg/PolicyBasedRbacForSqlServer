@@ -62,13 +62,13 @@ The solution ensures that every new Azure SQL database (except `master`) automat
 
 ---
 
-## Deployment Options
+## Deployment
 
-There are two ways to deploy this solution: **declarative (recommended)** using the provided Bicep modules, or **imperative** using the PowerShell script.
+The recommended way to deploy this solution is with the provided `deploy.ps1` wrapper, which drives a fully declarative Bicep deployment and handles all post-deployment steps automatically.
 
 ---
 
-### Option A: Declarative Deployment with Bicep (Recommended)
+### Deploying with `deploy.ps1` (Recommended)
 
 The `infra/` directory contains a set of Bicep modules that deploy all required Azure resources declaratively:
 
@@ -152,13 +152,11 @@ This means you only need to edit `SetPrincipalName.ps1` — no manual copy/paste
 
 ---
 
-### Option B: Declarative Deployment via CLI (Alternative)
+## Manual Deployment Reference
 
-All steps can also be performed manually using Azure CLI commands. See the [Setup Steps](#setup-steps-manual-reference) section below for a step-by-step reference.
+If you prefer to deploy step by step using Azure CLI — or need to understand what the Bicep template does under the hood — the sections below document each step explicitly.
 
----
-
-## Setup Steps (Manual Reference)
+### Step-by-Step Setup
 
 1. **Create AAD Groups:** *(one-time pre-requisite before any deployment)*
    - `SqlDbAdmins` (admins on server level)
