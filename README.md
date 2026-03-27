@@ -83,34 +83,9 @@ infra/
     └── sqlServer.bicep         # SQL Server with AAD-only auth + databases
 ```
 
-#### Pre-requisites (one-time, Entra ID operations)
+#### Deploy
 
-Before running the Bicep deployment, create the two required Entra ID security groups and note the `SqlDbAdmins` object ID:
-
-> **Note:** The Microsoft Graph Bicep extension was evaluated for automating this step but is not usable with interactive `az login` user accounts — the ARM deployment engine receives an ARM-scoped token that cannot be projected to the Graph API. Group creation therefore remains a pre-deployment step. The extension would work with a service principal holding `Group.ReadWrite.All` application permission with admin consent.
-
-```bash
-# Create SqlDbAdmins group (SQL Server administrator)
-az ad group create \
-  --display-name SqlDbAdmins \
-  --mail-nickname SqlDbAdmins \
-  --description "Group for SQL Database Administrators" \
-  --security-enabled true
-
-# Create SqlDbUsers group (assigned db_datareader inside databases)
-az ad group create \
-  --display-name SqlDbUsers \
-  --mail-nickname SqlDbUsers \
-  --description "Group for SQL Database Users" \
-  --security-enabled true
-
-# Get the object ID of SqlDbAdmins (needed as a Bicep parameter)
-az ad group show --group SqlDbAdmins --query id --output tsv
-```
-
-#### Deploy with Bicep
-
-1. Edit `infra/main.bicepparam` and replace the `aadAdminGroupObjectId` value with the object ID retrieved above.
+1. Edit `infra/main.bicepparam` and set any parameters you want to customise (location, SQL server name, etc.). You do **not** need to create the Entra ID groups manually — the script creates them in Phase 1.
 
 2. Run the deployment wrapper — it handles all four phases automatically:
 
