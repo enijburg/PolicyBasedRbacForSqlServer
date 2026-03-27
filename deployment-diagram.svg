@@ -1,0 +1,302 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1200 920" width="1200" height="920"
+     font-family="Segoe UI, Arial, sans-serif">
+
+  <defs>
+    <!-- Arrow markers -->
+    <marker id="arrow" viewBox="0 0 10 7" refX="10" refY="3.5"
+            markerWidth="10" markerHeight="7" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#444"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 7" refX="10" refY="3.5"
+            markerWidth="10" markerHeight="7" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#107C10"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 7" refX="10" refY="3.5"
+            markerWidth="10" markerHeight="7" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0078D4"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 7" refX="10" refY="3.5"
+            markerWidth="10" markerHeight="7" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#744DA9"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 7" refX="10" refY="3.5"
+            markerWidth="10" markerHeight="7" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#E97132"/>
+    </marker>
+    <marker id="arrow-cyan" viewBox="0 0 10 7" refX="10" refY="3.5"
+            markerWidth="10" markerHeight="7" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#00B7C3"/>
+    </marker>
+    <marker id="arrow-yellow" viewBox="0 0 10 7" refX="10" refY="3.5"
+            markerWidth="10" markerHeight="7" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#B8860B"/>
+    </marker>
+
+    <!-- Drop shadow filter -->
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#00000020"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="920" fill="#f9f9fb" rx="12"/>
+
+  <!-- Title -->
+  <text x="600" y="38" text-anchor="middle" font-size="20" font-weight="600" fill="#1a1a2e">
+    Policy-Based RBAC for Azure SQL Database — Deployment Flow
+  </text>
+
+  <!-- ================================================================== -->
+  <!-- DEPLOY.PS1 (top-left caller) -->
+  <!-- ================================================================== -->
+  <rect x="30" y="60" width="300" height="130" rx="10" fill="#efffef" stroke="#107C10" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="30" y="60" width="300" height="32" rx="10" fill="#107C10"/>
+  <rect x="30" y="82" width="300" height="10" fill="#107C10"/>
+  <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImEyNGY5OTgzLTkxMWYtNGRmNy05MjBmLWY5NjRjOGMxMGY4MiIgeDE9IjkiIHkxPSIxNS44MzQiIHgyPSI5IiB5Mj0iNS43ODgiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMzMmJlZGQiIC8+PHN0b3Agb2Zmc2V0PSIwLjE3NSIgc3RvcC1jb2xvcj0iIzMyY2FlYSIgLz48c3RvcCBvZmZzZXQ9IjAuNDEiIHN0b3AtY29sb3I9IiMzMmQyZjIiIC8+PHN0b3Agb2Zmc2V0PSIwLjc3NSIgc3RvcC1jb2xvcj0iIzMyZDRmNSIgLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48dGl0bGU+TXNQb3J0YWxGeC5iYXNlLmltYWdlcy0xMDwvdGl0bGU+PGcgaWQ9ImE3ZWYwNDgyLTcxZjItNGI3ZS1iOTE2LWIxYzc1NDI0NWJmMSI+PGc+PHBhdGggZD0iTS41LDUuNzg4aDE3YTAsMCwwLDAsMSwwLDB2OS40NzhhLjU2OC41NjgsMCwwLDEtLjU2OC41NjhIMS4wNjhBLjU2OC41NjgsMCwwLDEsLjUsMTUuMjY2VjUuNzg4QTAsMCwwLDAsMSwuNSw1Ljc4OFoiIGZpbGw9InVybCgjYTI0Zjk5ODMtOTExZi00ZGY3LTkyMGYtZjk2NGM4YzEwZjgyKSIgLz48cGF0aCBkPSJNMS4wNzEsMi4xNjZIMTYuOTI5YS41NjguNTY4LDAsMCwxLC41NjguNTY4VjUuNzg4YTAsMCwwLDAsMSwwLDBILjVhMCwwLDAsMCwxLDAsMFYyLjczNEEuNTY4LjU2OCwwLDAsMSwxLjA3MSwyLjE2NloiIGZpbGw9IiMwMDc4ZDQiIC8+PHBhdGggZD0iTTQuMjkyLDcuMTUzaC41MjNhLjE2Ny4xNjcsMCwwLDEsLjE2Ny4xNjd2My44NThhLjMzNS4zMzUsMCwwLDEtLjMzNS4zMzVINC4xMjVhMCwwLDAsMCwxLDAsMFY3LjMyMWEuMTY3LjE2NywwLDAsMSwuMTY3LS4xNjdaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNS4yNzEgNS45NjcpIHJvdGF0ZSgtNDUuMDgxKSIgZmlsbD0iI2YyZjJmMiIgLz48cGF0aCBkPSJNNC4zMiw5LjY0N2guNTIzYS4xNjcuMTY3LDAsMCwxLC4xNjcuMTY3djQuMTMxYTAsMCwwLDAsMSwwLDBINC40ODhhLjMzNS4zMzUsMCwwLDEtLjMzNS0uMzM1di0zLjhhLjE2Ny4xNjcsMCwwLDEsLjE2Ny0uMTY3WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTAuNTA0IDIzLjM4NSkgcm90YXRlKC0xMzUuMDgxKSIgZmlsbD0iI2U2ZTZlNiIgLz48cmVjdCB4PSI3LjIyMSIgeT0iMTIuNjQiIHdpZHRoPSI0Ljc3MSIgaGVpZ2h0PSIxLjAxMSIgcng9IjAuMjkxIiBmaWxsPSIjZjJmMmYyIiAvPjwvZz48L2c+PC9zdmc+"
+         x="40" y="63" width="26" height="26"/>
+  <text x="180" y="82" text-anchor="middle" font-size="13" font-weight="600" fill="#fff">deploy.ps1</text>
+
+  <text x="50" y="114" font-size="12" font-weight="600" fill="#333">PowerShell Deployment Script</text>
+  <text x="50" y="132" font-size="11" fill="#666">Orchestrates 4 phases + pre-flight</text>
+  <text x="50" y="150" font-size="10" fill="#107C10">Pre-flight → Phase 1 → Phase 2 → Phase 3 → Phase 4</text>
+  <text x="50" y="168" font-size="10" fill="#888">Params: StackName, Location, TemplateFile</text>
+
+  <!-- ================================================================== -->
+  <!-- PRE-FLIGHT CHECK (small box, top-right of script) -->
+  <!-- ================================================================== -->
+  <rect x="30" y="210" width="300" height="70" rx="8" fill="#fff" stroke="#888" stroke-width="1.2"/>
+  <circle cx="50" cy="235" r="12" fill="#888"/>
+  <text x="50" y="240" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">0</text>
+  <text x="70" y="236" font-size="12" font-weight="600" fill="#333">Pre-flight Check</text>
+  <text x="70" y="254" font-size="10" fill="#666">Verify az login, check Entra ID permissions</text>
+  <text x="70" y="268" font-size="10" fill="#888">Needs Global Admin for Phase 4 (or skips)</text>
+
+  <!-- ================================================================== -->
+  <!-- ENTRA ID box -->
+  <!-- ================================================================== -->
+  <rect x="30" y="300" width="300" height="320" rx="10" fill="#f3eefb" stroke="#744DA9" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="30" y="300" width="300" height="32" rx="10" fill="#744DA9"/>
+  <rect x="30" y="322" width="300" height="10" fill="#744DA9"/>
+  <image xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0idXVpZC0zMTg3MWJiMC01NTE3LTRhZWUtYjJiYS01YTM4NDhiYTYxNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4IiB2aWV3Qm94PSIwIDAgMTggMTgiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0idXVpZC0xMGQzMDNkYy1kYmM2LTRmZDYtOWI1MS00ZDJjN2VmMWFmOTMiIHgxPSIxMC45MDEiIHkxPSI0LjM4NSIgeDI9IjEwLjkwMSIgeTI9IjE4Ljc4MyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIG9mZnNldD0iLjA4NSIgc3RvcC1jb2xvcj0iI2VmNzEwMCIgLz48c3RvcCBvZmZzZXQ9Ii45OTkiIHN0b3AtY29sb3I9IiNmNzhkMWUiIC8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9InV1aWQtNmJiZTc0NWYtYjQ5NS00NmNhLWE3ZjYtNmQ0OWQ1N2VlMDI5IiB4MT0iLTc5LjQ1MiIgeTE9Ijc3OC42NTciIHgyPSItNzkuNDUyIiB5Mj0iNzg2LjM3OCIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSg5NCA3OTUuNTE2KSBzY2FsZSgxIC0xKSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzAwNzhkNCIgLz48c3RvcCBvZmZzZXQ9Ii4wNiIgc3RvcC1jb2xvcj0iIzBhN2NkNyIgLz48c3RvcCBvZmZzZXQ9Ii4zNCIgc3RvcC1jb2xvcj0iIzJlOGNlMSIgLz48c3RvcCBvZmZzZXQ9Ii41OSIgc3RvcC1jb2xvcj0iIzQ4OTdlOSIgLz48c3RvcCBvZmZzZXQ9Ii44MiIgc3RvcC1jb2xvcj0iIzU4OWVlZCIgLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM1ZWEwZWYiIC8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PGc+PHBvbHlnb24gcG9pbnRzPSI0LjYzNiA5Ljk4NSA0LjY4OCAxMC4wMTcgOSAxMi43MTMgOS4wMDEgMTIuNzEzIDkuMDAxIDEyLjcxMyA5LjAwMSA1LjA2MiA5IDUuMDYxIDQuNjM2IDkuOTg1IiBmaWxsPSIjZmZiMzRkIiBpc29sYXRpb249Imlzb2xhdGUiIG9wYWNpdHk9Ii45IiBzdHJva2Utd2lkdGg9IjAiIC8+PHBhdGggZD0ibTEwLjE0NiwxLjI5NGMtLjI5OS0uMzM4LS43MjItLjUwNy0xLjE0NS0uNTA3aDBjLS40MjQtLjAwMS0uODQ3LjE2OC0xLjE0Ny41MDZoLS4wMDFMLjM1Myw5Ljc1M2MtLjU3OS42NTQtLjQyOCwxLjY0Mi4zMjMsMi4xMTEsMCwwLDIuNzc2LDEuNzM1LDMuMTI2LDEuOTU0LjM4OC4yNDIsMS4wMzMuNTExLDEuNzE1LjUxMS42MjEsMCwxLjE5OC0uMTgsMS42NzYtLjQ4NywwLDAsMCwwLC4wMDIsMGwxLjgwNS0xLjEyOC00LjM2NC0yLjcyOCw0LjM2NS00LjkyNC4xMDktLjEyM2MuNTUtLjYyNywxLjM3Ny0xLjAyNiwyLjMwMi0xLjAyNi40NzIsMCwuOTE2LjEwNywxLjMxMy4yOTFsLTIuNTc5LTIuOTA5WiIgZmlsbD0iI2ZhYTIxZCIgc3Ryb2tlLXdpZHRoPSIwIiAvPjxwb2x5Z29uIHBvaW50cz0iMTMuMzY1IDkuOTg1IDEzLjM2NSA5Ljk4NSAxMy4zNjUgOS45ODUgOS4wMDEgNS4wNjIgOS4wMDEgMTIuNzEyIDEzLjM2NSA5Ljk4NSIgZmlsbD0iI2Y3OGQxZSIgc3Ryb2tlLXdpZHRoPSIwIiAvPjxwYXRoIGQ9Im0xNy42NDcsOS43NTNsLTQuOTIxLTUuNTUxYy0uMzk3LS4xODUtLjg0Mi0uMjkxLTEuMzEzLS4yOTEtLjkyNSwwLTEuNzUyLjM5OS0yLjMwMiwxLjAyNmwtLjEwOS4xMjMsNC4zNjQsNC45MjQtNC4yNjYsMi42NjYtLjA5OS4wNjJ2LjAwM3MtLjAwMS0uMDAyLS4wMDEtLjAwMmwtMS44MDUsMS4xMjhzLS4wMDIsMC0uMDAyLDBjLS40NzguMzA3LTEuMDU1LjQ4Ny0xLjY3Ni40ODctLjY4MiwwLTEuMzI3LS4yNjktMS43MTUtLjUxMWw0LjM3NCwyLjczNGMuMjUuMTU2LjUzOC4yMzQuODI0LjIzNGgwcy4wMDEsMCwuMDAxLDBjLjI4NywwLC41NzMtLjA3OC44MjMtLjIzNGwxLjczLTEuMDgxaDBzNS43Ny0zLjYwNyw1Ljc3LTMuNjA3aDBjLjc1MS0uNDY4LjkwMi0xLjQ1Ni4zMjMtMi4xMVoiIGZpbGw9InVybCgjdXVpZC0xMGQzMDNkYy1kYmM2LTRmZDYtOWI1MS00ZDJjN2VmMWFmOTMpIiBzdHJva2Utd2lkdGg9IjAiIC8+PC9nPjxwYXRoIGQ9Im0xOCwxMi43MjFjMCwyLjI2NS0yLjczOSw0LjA4OC0zLjMzOCw0LjQ2LS4wNjguMDQ0LS4xNTYuMDQ0LS4yMjQsMC0uNTk5LS4zNjctMy4zMzgtMi4xOS0zLjMzOC00LjQ2di0yLjcyNWMwLS4xMTkuMDkzLS4yMTUuMjEtLjIxOCwyLjEzNC0uMDU1LDEuNjQyLS45OTEsMy4yNDEtLjk5MXMxLjEwNi45MzcsMy4yNDEuOTkxYy4xMTcuMDAzLjIxLjEuMjEuMjE4djIuNzI1WiIgZmlsbD0iIzAwNzhkNCIgc3Ryb2tlLXdpZHRoPSIwIiAvPjxwYXRoIGQ9Im0xNy43MTcsMTIuNzQxYzAsMi4wODEtMi41MTUsMy43NTEtMy4wNjUsNC4wODgtLjA2My4wMzktLjE0Mi4wMzktLjIwNSwwLS41NTEtLjMzNy0zLjA2NS0yLjAwNy0zLjA2NS00LjA4OHYtMi40NzhjLS4wMTktLjExMS4wNTQtLjIxNi4xNjMtLjIzNS4wMTEtLjAwMi4wMjEtLjAwMy4wMzItLjAwMywxLjk1OS0uMDM1LDEuNTExLS44ODcsMi45NzMtLjg4N3MxLjAxNC44NTIsMi45NzMuODg3Yy4xMDcuMDAzLjE5Mi4wOS4xOTUuMTk4djIuNTE3WiIgZmlsbD0idXJsKCN1dWlkLTZiYmU3NDVmLWI0OTUtNDZjYS1hN2Y2LTZkNDlkNTdlZTAyOSkiIHN0cm9rZS13aWR0aD0iMCIgLz48L3N2Zz4="
+         x="40" y="303" width="26" height="26"/>
+  <text x="180" y="322" text-anchor="middle" font-size="13" font-weight="600" fill="#fff">Microsoft Entra ID</text>
+
+  <!-- SqlDbAdmins group -->
+  <image xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iYTVjMmMzNGEtYTVmOS00MDQzLWEwODQtZTUxYjc0NDk3ODk1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImY5NzM2MGZhLWZkMTMtNDIwYi05YjQzLTc0YjhkZGU4M2ExMSIgeDE9IjYuNyIgeTE9IjcuMjYiIHgyPSI2LjciIHkyPSIxOC4zNiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIG9mZnNldD0iMC4yMiIgc3RvcC1jb2xvcj0iIzMyZDRmNSIgLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxOThhYjMiIC8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImIyYWI0MDcxLTUyOWQtNDQ1MC05NDQzLWU2ZGMwOTM5Y2M0ZSIgeDE9IjYuNDIiIHkxPSIxLjMyIiB4Mj0iNy4yMyIgeTI9IjExLjM5IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwLjIyIiBzdG9wLWNvbG9yPSIjMzJkNGY1IiAvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE5OGFiMyIgLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48dGl0bGU+SWNvbi1pZGVudGl0eS0yMjM8L3RpdGxlPjxwYXRoIGQ9Ik0xNy4yMiwxMy45MmEuNzkuNzksMCwwLDAsLjgtLjc5QS4yOC4yOCwwLDAsMCwxOCwxM2MtLjMxLTIuNS0xLjc0LTQuNTQtNC40Ni00LjU0UzkuMzUsMTAuMjIsOS4wNywxM2EuODEuODEsMCwwLDAsLjcyLjg4aDcuNDNaIiBmaWxsPSIjMDA3OGQ0IiAvPjxwYXRoIGQ9Ik0xMy41NSw5LjA5YTIuNDQsMi40NCwwLDAsMS0xLjM2LS40bDEuMzUsMy41MiwxLjMzLTMuNDlBMi41NCwyLjU0LDAsMCwxLDEzLjU1LDkuMDlaIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjgiIC8+PGNpcmNsZSBjeD0iMTMuNTUiIGN5PSI2LjU4IiByPSIyLjUxIiBmaWxsPSIjMDA3OGQ0IiAvPjxwYXRoIGQ9Ik0xMi4xOSwxNi4zNmExLjE5LDEuMTksMCwwLDAsMS4xOS0xLjE5LjY2LjY2LDAsMCwwLDAtLjE0Yy0uNDctMy43NC0yLjYtNi43OC02LjY2LTYuNzhTLjQ0LDEwLjgzLDAsMTVhMS4yLDEuMiwwLDAsMCwxLjA3LDEuMzFoMTEuMVoiIGZpbGw9InVybCgjZjk3MzYwZmEtZmQxMy00MjBiLTliNDMtNzRiOGRkZTgzYTExKSIgLz48cGF0aCBkPSJNNi43Nyw5LjE0YTMuNzIsMy43MiwwLDAsMS0yLS42bDIsNS4yNSwyLTUuMjFBMy44MSwzLjgxLDAsMCwxLDYuNzcsOS4xNFoiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuOCIgLz48Y2lyY2xlIGN4PSI2Ljc0IiBjeT0iNS4zOSIgcj0iMy43NSIgZmlsbD0idXJsKCNiMmFiNDA3MS01MjlkLTQ0NTAtOTQ0My1lNmRjMDkzOWNjNGUpIiAvPjwvc3ZnPg=="
+         x="55" y="350" width="40" height="40"/>
+  <text x="105" y="365" font-size="13" font-weight="600" fill="#333">SqlDbAdmins</text>
+  <text x="105" y="382" font-size="11" fill="#666">Security Group</text>
+
+  <!-- SqlDbUsers group -->
+  <image xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iYTVjMmMzNGEtYTVmOS00MDQzLWEwODQtZTUxYjc0NDk3ODk1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImY5NzM2MGZhLWZkMTMtNDIwYi05YjQzLTc0YjhkZGU4M2ExMSIgeDE9IjYuNyIgeTE9IjcuMjYiIHgyPSI2LjciIHkyPSIxOC4zNiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIG9mZnNldD0iMC4yMiIgc3RvcC1jb2xvcj0iIzMyZDRmNSIgLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxOThhYjMiIC8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImIyYWI0MDcxLTUyOWQtNDQ1MC05NDQzLWU2ZGMwOTM5Y2M0ZSIgeDE9IjYuNDIiIHkxPSIxLjMyIiB4Mj0iNy4yMyIgeTI9IjExLjM5IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwLjIyIiBzdG9wLWNvbG9yPSIjMzJkNGY1IiAvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE5OGFiMyIgLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48dGl0bGU+SWNvbi1pZGVudGl0eS0yMjM8L3RpdGxlPjxwYXRoIGQ9Ik0xNy4yMiwxMy45MmEuNzkuNzksMCwwLDAsLjgtLjc5QS4yOC4yOCwwLDAsMCwxOCwxM2MtLjMxLTIuNS0xLjc0LTQuNTQtNC40Ni00LjU0UzkuMzUsMTAuMjIsOS4wNywxM2EuODEuODEsMCwwLDAsLjcyLjg4aDcuNDNaIiBmaWxsPSIjMDA3OGQ0IiAvPjxwYXRoIGQ9Ik0xMy41NSw5LjA5YTIuNDQsMi40NCwwLDAsMS0xLjM2LS40bDEuMzUsMy41MiwxLjMzLTMuNDlBMi41NCwyLjU0LDAsMCwxLDEzLjU1LDkuMDlaIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjgiIC8+PGNpcmNsZSBjeD0iMTMuNTUiIGN5PSI2LjU4IiByPSIyLjUxIiBmaWxsPSIjMDA3OGQ0IiAvPjxwYXRoIGQ9Ik0xMi4xOSwxNi4zNmExLjE5LDEuMTksMCwwLDAsMS4xOS0xLjE5LjY2LjY2LDAsMCwwLDAtLjE0Yy0uNDctMy43NC0yLjYtNi43OC02LjY2LTYuNzhTLjQ0LDEwLjgzLDAsMTVhMS4yLDEuMiwwLDAsMCwxLjA3LDEuMzFoMTEuMVoiIGZpbGw9InVybCgjZjk3MzYwZmEtZmQxMy00MjBiLTliNDMtNzRiOGRkZTgzYTExKSIgLz48cGF0aCBkPSJNNi43Nyw5LjE0YTMuNzIsMy43MiwwLDAsMS0yLS42bDIsNS4yNSwyLTUuMjFBMy44MSwzLjgxLDAsMCwxLDYuNzcsOS4xNFoiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuOCIgLz48Y2lyY2xlIGN4PSI2Ljc0IiBjeT0iNS4zOSIgcj0iMy43NSIgZmlsbD0idXJsKCNiMmFiNDA3MS01MjlkLTQ0NTAtOTQ0My1lNmRjMDkzOWNjNGUpIiAvPjwvc3ZnPg=="
+         x="55" y="410" width="40" height="40"/>
+  <text x="105" y="425" font-size="13" font-weight="600" fill="#333">SqlDbUsers</text>
+  <text x="105" y="442" font-size="11" fill="#666">Security Group</text>
+
+  <!-- Directory Readers role -->
+  <rect x="55" y="470" width="250" height="55" rx="6" fill="#fff" stroke="#744DA9" stroke-width="1.2"/>
+  <text x="70" y="492" font-size="12" font-weight="600" fill="#744DA9">Directory Readers</text>
+  <text x="70" y="510" font-size="10" fill="#666">Entra ID directory role (88d8e3e3-...)</text>
+
+  <!-- Entra ID note -->
+  <text x="55" y="550" font-size="10" fill="#744DA9">Phase 1 creates groups via MS Graph API</text>
+  <text x="55" y="564" font-size="10" fill="#744DA9">Phase 4 grants Directory Readers to SQL MI</text>
+  <text x="55" y="578" font-size="10" fill="#999">idempotent — skips if already present</text>
+  <text x="55" y="592" font-size="10" fill="#999">Phase 4 skipped if insufficient permissions</text>
+
+  <!-- ================================================================== -->
+  <!-- AZURE SUBSCRIPTION box -->
+  <!-- ================================================================== -->
+  <rect x="370" y="60" width="800" height="560" rx="10" fill="#eef4fc" stroke="#0078D4" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="370" y="60" width="800" height="32" rx="10" fill="#0078D4"/>
+  <rect x="370" y="82" width="800" height="10" fill="#0078D4"/>
+  <image xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iYmMxOGJhZGUtNTQ4MS00NDdlLWE5NTktNjU5ZDcyMzQ2NDc0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij48ZGVmcz48cmFkaWFsR3JhZGllbnQgaWQ9ImE0NDVjNzE3LTlkNzUtNDRjNy1iYTZiLTBkOGYyMzgzZTU2MCIgY3g9Ii0zNi42MyIgY3k9IjE3LjEyIiByPSIxMS4xOCIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSg0MS44OCAtNy40KSBzY2FsZSgwLjk0IDAuOTQpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwLjI3IiBzdG9wLWNvbG9yPSIjZmZkNzBmIiAvPjxzdG9wIG9mZnNldD0iMC40OSIgc3RvcC1jb2xvcj0iI2ZmY2IxMiIgLz48c3RvcCBvZmZzZXQ9IjAuODgiIHN0b3AtY29sb3I9IiNmZWFjMTkiIC8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmVhMTFiIiAvPjwvcmFkaWFsR3JhZGllbnQ+PC9kZWZzPjx0aXRsZT5JY29uLWdlbmVyYWwtMjwvdGl0bGU+PHBhdGggaWQ9ImUzZDFlNThjLWY3OGUtNGZiNS05ODU3LTBjOTMzMWRhOTk3OSIgZD0iTTEzLjU2LDcuMTlhMi4wNywyLjA3LDAsMCwwLDAtMi45M2gwTDEwLC42OWEyLjA2LDIuMDYsMCwwLDAtMi45MiwwaDBMMy41Miw0LjI2YTIuMDksMi4wOSwwLDAsMCwwLDIuOTNsMywzYS42MS42MSwwLDAsMSwuMTcuNDF2NS41MmEuNy43LDAsMCwwLC4yLjVsMS4zNSwxLjM1YS40NS40NSwwLDAsMCwuNjYsMGwxLjMxLTEuMzFoMGwuNzctLjc3YS4yNi4yNiwwLDAsMCwwLS4zOGwtLjU1LS41NmEuMjkuMjksMCwwLDEsMC0uNDJsLjU1LS41NmEuMjYuMjYsMCwwLDAsMC0uMzhMMTAuNCwxM2EuMjguMjgsMCwwLDEsMC0uNDFMMTEsMTJhLjI2LjI2LDAsMCwwLDAtLjM4bC0uNzctLjc4di0uMjhabS01LTUuNjRBMS4xOCwxLjE4LDAsMSwxLDcuMzcsMi43MywxLjE3LDEuMTcsMCwwLDEsOC41NCwxLjU1WiIgZmlsbD0idXJsKCNhNDQ1YzcxNy05ZDc1LTQ0YzctYmE2Yi0wZDhmMjM4M2U1NjApIiAvPjxwYXRoIGlkPSJhMjFhOGY3YS02MWNjLTQwMzUtODQ0OS1lNWM4ZmU0ZDRkNWUiIGQ9Ik03LjYyLDE2LjIxaDBBLjI1LjI1LDAsMCwwLDgsMTZWMTEuNTVhLjI3LjI3LDAsMCwwLS4xMS0uMjJoMGEuMjUuMjUsMCwwLDAtLjM5LjIyVjE2QS4yNy4yNywwLDAsMCw3LjYyLDE2LjIxWiIgZmlsbD0iI2ZmOTMwMCIgb3BhY2l0eT0iMC43NSIgLz48cmVjdCBpZD0iZWNkMzE4OWMtZmIxZS00YTBlLWEyYjYtYmEyZjExZGRhNDg0IiB4PSI1LjY5IiB5PSI1LjQ1IiB3aWR0aD0iNS44NiIgaGVpZ2h0PSIwLjY5IiByeD0iMC4zMiIgZmlsbD0iI2ZmOTMwMCIgb3BhY2l0eT0iMC43NSIgLz48cmVjdCBpZD0iYTE5NDlhM2MtNDgxOC00YmQxLWIyMzYtMGQ5NzBiOTJmYzYyIiB4PSI1LjY5IiB5PSI2LjU3IiB3aWR0aD0iNS44NiIgaGVpZ2h0PSIwLjY5IiByeD0iMC4zMiIgZmlsbD0iI2ZmOTMwMCIgb3BhY2l0eT0iMC43NSIgLz48L3N2Zz4="
+         x="380" y="63" width="26" height="26"/>
+  <text x="770" y="82" text-anchor="middle" font-size="13" font-weight="600" fill="#fff">Azure Subscription</text>
+
+  <!-- Deployment Stack (subscription-level) -->
+  <rect x="390" y="104" width="280" height="80" rx="8" fill="#fff" stroke="#0078D4" stroke-width="1.5"/>
+  <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImE5YzQzNzFhLWQ3MDctNDNkOC1iMjEzLTM3ZDA0MWEyNTNhYiIgeDE9Ii00MCIgeTE9Ijc0LjE4MSIgeDI9Ii00MCIgeTI9IjU5LjgxOSIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSg0OSAtNTgpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMTk4YWIzIiAvPjxzdG9wIG9mZnNldD0iMC42MTkiIHN0b3AtY29sb3I9IiMzMWQwZjEiIC8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMzJkNGY1IiAvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxnIGlkPSJhNzFkZTRhMC1kMGRlLTRiMzQtODE1Mi1lZmIzMWJlY2EwNGYiPjxnIGlkPSJiY2QwNWY5YS0zMmZhLTQ2YTYtOGY1YS03MzEyOTlmMTA2YTgiPjxnPjxwYXRoIGQ9Ik02LjIxNi41SDIuODQ1QTEuMDI2LDEuMDI2LDAsMCwwLDEuODE5LDEuNTI2VjQuOUgzLjg3MVYyLjU1Mkg2LjIxNloiIGZpbGw9IiMzMmJlZGQiIC8+PHBhdGggZD0iTTE1LjE1NS41aC0zLjM3VjIuNTUyaDIuMzQ0VjQuOWgyLjA1MlYxLjUyNkExLjAyNiwxLjAyNiwwLDAsMCwxNS4xNTUuNVoiIGZpbGw9IiMzMmJlZGQiIC8+PHBhdGggZD0iTTE0LjEyOSwxMy4xdjIuMzQ1SDExLjc4NVYxNy41aDMuMzdhMS4wMjYsMS4wMjYsMCwwLDAsMS4wMjYtMS4wMjZWMTMuMVoiIGZpbGw9IiMzMmJlZGQiIC8+PHBhdGggZD0iTTMuODcxLDE1LjQ0OFYxMy4xSDEuODE5djMuMzcxQTEuMDI2LDEuMDI2LDAsMCwwLDIuODQ1LDE3LjVINi4yMTZWMTUuNDQ4WiIgZmlsbD0iIzMyYmVkZCIgLz48cGF0aCBkPSJNMy43MjQsMTYuMTgxSDE0LjI3NmEuNTg4LjU4OCwwLDAsMCwuNTg2LS41ODZWMi40YS41ODguNTg4LDAsMCwwLS41ODYtLjU4NkgzLjcyNGEuNTg4LjU4OCwwLDAsMC0uNTg2LjU4NlYxNS42QS41ODguNTg4LDAsMCwwLDMuNzI0LDE2LjE4MVoiIGZpbGw9InVybCgjYTljNDM3MWEtZDcwNy00M2Q4LWIyMTMtMzdkMDQxYTI1M2FiKSIgLz48cGF0aCBkPSJNNC42LDE1LjAwOUgxMy40YS4yOTQuMjk0LDAsMCwwLC4yOTMtLjI5M1YzLjI4NWEuMjk0LjI5NCwwLDAsMC0uMjkzLS4yOTRINC42YS4yOTQuMjk0LDAsMCwwLS4yOTMuMjk0VjE0LjcxNkEuMjk0LjI5NCwwLDAsMCw0LjYsMTUuMDA5WiIgZmlsbD0iI2ZmZiIgLz48cGF0aCBkPSJNNi42NTUsMTMuMjVoNC42OWEuMjk0LjI5NCwwLDAsMCwuMjkzLS4yOTNWMTEuNjM4YS4yOTQuMjk0LDAsMCwwLS4yOTMtLjI5M0g2LjY1NWEuMjk0LjI5NCwwLDAsMC0uMjkzLjI5M3YxLjMxOUEuMjk0LjI5NCwwLDAsMCw2LjY1NSwxMy4yNVoiIGZpbGw9IiM1ZTk2MjQiIC8+PHBhdGggZD0iTTYuNjU1LDkuOTUzaDQuNjlhLjI5NC4yOTQsMCwwLDAsLjI5My0uMjkzVjguMzQxYS4yOTQuMjk0LDAsMCwwLS4yOTMtLjI5NEg2LjY1NWEuMjk0LjI5NCwwLDAsMC0uMjkzLjI5NFY5LjY2QS4yOTQuMjk0LDAsMCwwLDYuNjU1LDkuOTUzWiIgZmlsbD0iIzc2YmMyZCIgLz48cGF0aCBkPSJNNi42NTUsNi42NTVoNC42OWEuMjk0LjI5NCwwLDAsMCwuMjkzLS4yOTNWNS4wNDNhLjI5NC4yOTQsMCwwLDAtLjI5My0uMjkzSDYuNjU1YS4yOTQuMjk0LDAsMCwwLS4yOTMuMjkzVjYuMzYyQS4yOTQuMjk0LDAsMCwwLDYuNjU1LDYuNjU1WiIgZmlsbD0iIzg2ZDYzMyIgLz48L2c+PC9nPjwvZz7igIsKPC9zdmc+"
+         x="405" y="114" width="40" height="40"/>
+  <text x="455" y="131" font-size="13" font-weight="600" fill="#333">Deployment Stack</text>
+  <text x="455" y="148" font-size="11" fill="#666">az stack sub create</text>
+  <text x="405" y="172" font-size="10" fill="#0078D4">Scope: subscription | --no-wait + polling</text>
+
+  <!-- Policy Definition (subscription scope) -->
+  <rect x="700" y="104" width="250" height="80" rx="8" fill="#fff" stroke="#E97132" stroke-width="1.5"/>
+  <image xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iZTBjMmEyZjAtZTY0Ny00ZjAxLWI5MWItYWZiN2JmMTUwNDBkIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImE3ZjczMWE5LTVjNTgtNDRmNC04MDM3LTNjMzYyN2U5ODAwOCIgeDE9IjguNDUiIHkxPSIxMS40NyIgeDI9IjguNDUiIHkyPSI2LjI0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMTk4YWIzIiAvPjxzdG9wIG9mZnNldD0iMC4xNiIgc3RvcC1jb2xvcj0iIzFmOWFjMiIgLz48c3RvcCBvZmZzZXQ9IjAuNSIgc3RvcC1jb2xvcj0iIzI5YmFkZSIgLz48c3RvcCBvZmZzZXQ9IjAuOCIgc3RvcC1jb2xvcj0iIzMwY2RlZiIgLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMzMmQ0ZjUiIC8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHRpdGxlPkljb24tbWFuYWdlLTMxNjwvdGl0bGU+PGVsbGlwc2UgY3g9IjguNDUiIGN5PSI4Ljg1IiByeD0iMi42IiByeT0iMi42MSIgZmlsbD0idXJsKCNhN2Y3MzFhOS01YzU4LTQ0ZjQtODAzNy0zYzM2MjdlOTgwMDgpIiAvPjxlbGxpcHNlIGN4PSIxNS43MyIgY3k9IjQuNzciIHJ4PSIxLjI3IiByeT0iMS4yOCIgZmlsbD0iIzMyYmVkZCIgLz48ZWxsaXBzZSBjeD0iMTUuNzMiIGN5PSI4Ljk1IiByeD0iMS4yNyIgcnk9IjEuMjgiIGZpbGw9IiMzMmJlZGQiIC8+PGVsbGlwc2UgY3g9IjE1LjczIiBjeT0iMTMuMTIiIHJ4PSIxLjI3IiByeT0iMS4yOCIgZmlsbD0iIzMyYmVkZCIgLz48ZWxsaXBzZSBjeD0iMTIuODMiIGN5PSI2LjkxIiByeD0iMS4yNyIgcnk9IjEuMjgiIGZpbGw9IiM1MGU2ZmYiIC8+PGVsbGlwc2UgY3g9IjEyLjgzIiBjeT0iMTEuMDkiIHJ4PSIxLjI3IiByeT0iMS4yOCIgZmlsbD0iIzUwZTZmZiIgLz48cGF0aCBkPSJNMi40MSw1LjU4QS4yNC4yNCwwLDAsMSwyLjUsNS41TDguMzIsMi4xMWMuMDgsMCw1LDIuNzgsNSwyLjc4YS4yNC4yNCwwLDAsMCwuMzYtLjIxVjMuNTlhLjI0LjI0LDAsMCwwLS4xMi0uMjFTOC40LjQ2LDguMzMuNUwxLjExLDQuNjQsMSw0LjcyWiIgZmlsbD0iIzk0OTQ5NCIgLz48cGF0aCBkPSJNMTMuMywxMy4xNCw4LjU2LDE1Ljg3YS4zNS4zNSwwLDAsMS0uMTEsMHYxLjZhLjIuMiwwLDAsMCwuMTEsMGw1LTIuODZhLjI0LjI0LDAsMCwwLC4xMi0uMlYxMy4zNUEuMjQuMjQsMCwwLDAsMTMuMywxMy4xNFoiIGZpbGw9IiM5NDk0OTQiIC8+PHBhdGggZD0iTTguNDUsMTUuOWEuMzEuMzEsMCwwLDEtLjEzLDBMMi41LDEyLjQ3YS4yMi4yMiwwLDAsMS0uMTItLjJWNS43YS4yNy4yNywwLDAsMSwwLS4xMkwxLDQuNzJhLjI4LjI4LDAsMCwwLDAsLjEzdjguMjdhLjI0LjI0LDAsMCwwLC4xMS4yMWw3LjIyLDQuMTRhLjI0LjI0LDAsMCwwLC4xMiwwWiIgZmlsbD0iI2IzYjNiMyIgLz48L3N2Zz4="
+         x="715" y="114" width="40" height="40"/>
+  <text x="765" y="131" font-size="13" font-weight="600" fill="#333">Policy Definition</text>
+  <text x="765" y="148" font-size="11" fill="#666">EnforceAadRoleAssignment</text>
+  <text x="715" y="172" font-size="10" fill="#E97132">Subscription scope | policyDefinition.bicep</text>
+
+  <!-- ================================================================== -->
+  <!-- RESOURCE GROUP box -->
+  <!-- ================================================================== -->
+  <rect x="390" y="200" width="750" height="400" rx="10" fill="#fff" stroke="#0078D4" stroke-width="1.2" stroke-dasharray="6 3"/>
+  <image xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iYTY4NWNjOGMtMzJiYS00ZDU0LTkxZGEtM2ExMjVjYjU4ZGVkIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij48dGl0bGU+SWNvbi1nZW5lcmFsLTc8L3RpdGxlPjxnPjxnPjxwYXRoIGQ9Ik0uNSwxNS4wOGEuMTYuMTYsMCwwLDAsLjA4LjE0bDEuMTYuNjVMMy43LDE3YS4xNy4xNywwLDAsMCwuMjMtLjA2bC42Ni0xLjEyYS4xNi4xNiwwLDAsMC0uMDYtLjIxbC0yLjMtMS4zYS4xNy4xNywwLDAsMS0uMDgtLjE0VjMuODVhLjE2LjE2LDAsMCwxLC4wOC0uMTRsMi4zLTEuM2EuMTYuMTYsMCwwLDAsLjA2LS4yMUwzLjkzLDEuMDhBLjE3LjE3LDAsMCwwLDMuNywxTDEuNzgsMi4xMWwtMS4yLjY3YS4xNi4xNiwwLDAsMC0uMDguMTRWMTUuMDhaIiBmaWxsPSIjOTQ5NDk0IiAvPjxwYXRoIGQ9Ik0yLjE0LDMuNzdsLjA2LS4wNiwyLjMtMS4zYS4xNC4xNCwwLDAsMCwuMDYtLjIxTDMuOSwxLjA4QS4xNS4xNSwwLDAsMCwzLjY4LDFMMS43NSwyLjExLjU2LDIuNzhzLS4wNSwwLS4wNi4wNmwuOS41MVoiIGZpbGw9IiNhM2EzYTMiIC8+PHBhdGggZD0iTTQuNSwxNS41OWwtMi4zLTEuM2EuMjIuMjIsMCwwLDEtLjA3LS4wOWwtMS42MiwxLC4wNSwwLDEuMTUuNjUsMiwxLjExYS4xNS4xNSwwLDAsMCwuMjItLjA2bC42Ni0xLjEyQS4xNC4xNCwwLDAsMCw0LjUsMTUuNTlaIiBmaWxsPSIjYTNhM2EzIiAvPjwvZz48cGF0aCBkPSJNMTcuNSwxNS4wOGEuMTYuMTYsMCwwLDEtLjA4LjE0bC0xLjE2LjY1TDE0LjMsMTdhLjE3LjE3LDAsMCwxLS4yMy0uMDZsLS42Ni0xLjEyYS4xNi4xNiwwLDAsMSwuMDYtLjIxbDIuMy0xLjNhLjE3LjE3LDAsMCwwLC4wOC0uMTRWMy44NWEuMTYuMTYsMCwwLDAtLjA4LS4xNGwtMi4zLTEuM2EuMTYuMTYsMCwwLDEtLjA2LS4yMWwuNjYtMS4xMkEuMTcuMTcsMCwwLDEsMTQuMywxbDEuOTIsMS4wOSwxLjIuNjdhLjE2LjE2LDAsMCwxLC4wOC4xNFYxNS4wOFoiIGZpbGw9IiM5NDk0OTQiIC8+PHBhdGggZD0iTTE1Ljg2LDMuNzdsLS4wNi0uMDYtMi4zLTEuM2EuMTQuMTQsMCwwLDEtLjA2LS4yMWwuNjYtMS4xMkEuMTUuMTUsMCwwLDEsMTQuMzIsMWwxLjkzLDEuMDksMS4xOS42N3MwLDAsLjA2LjA2bC0uOS41MVoiIGZpbGw9IiNhM2EzYTMiIC8+PHBhdGggZD0iTTEzLjUsMTUuNTlsMi4zLTEuM2EuMjIuMjIsMCwwLDAsLjA3LS4wOWwxLjYyLDEsMCwwLTEuMTUuNjUtMiwxLjExYS4xNS4xNSwwLDAsMS0uMjItLjA2bC0uNjYtMS4xMkEuMTQuMTQsMCwwLDEsMTMuNSwxNS41OVoiIGZpbGw9IiNhM2EzYTMiIC8+PHBvbHlnb24gcG9pbnRzPSIxNC4zMSA1LjkzIDE0LjMxIDEyLjA3IDguOTkgMTUuMTYgOC45OSA5LjAxIDE0LjMxIDUuOTMiIGZpbGw9IiMzMmJlZGQiIC8+PHBvbHlnb24gcG9pbnRzPSIxNC4zMSA1LjkzIDkgOS4wMiAzLjY4IDUuOTMgOSAyLjg0IDE0LjMxIDUuOTMiIGZpbGw9IiM5Y2ViZmYiIC8+PHBvbHlnb24gcG9pbnRzPSI4Ljk5IDkuMDIgOC45OSAxNS4xNiAzLjY4IDEyLjA3IDMuNjggNS45MyA4Ljk5IDkuMDIiIGZpbGw9IiM1MGU2ZmYiIC8+PHBvbHlnb24gcG9pbnRzPSIzLjY4IDEyLjA3IDguOTkgOS4wMSA4Ljk5IDE1LjE2IDMuNjggMTIuMDciIGZpbGw9IiM5Y2ViZmYiIC8+PHBvbHlnb24gcG9pbnRzPSIxNC4zMSAxMi4wNyA4Ljk5IDkuMDEgOC45OSAxNS4xNiAxNC4zMSAxMi4wNyIgZmlsbD0iIzUwZTZmZiIgLz48L2c+PC9zdmc+"
+         x="400" y="208" width="24" height="24"/>
+  <text x="430" y="226" font-size="12" font-weight="600" fill="#0078D4">rg_testsqlpolicy</text>
+
+  <!-- Managed Identity -->
+  <rect x="420" y="250" width="250" height="90" rx="8" fill="#fff" stroke="#FFB900" stroke-width="1.5"/>
+  <image xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iZjgwN2NkZGUtMThmMi00NTc0LWJhMTQtZjBiMWVlZjk0YTRhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImJiNjdiMTU0LWFmOGYtNGE1My1hOWNlLWFhMDQ2YjkzOThlOSIgeDE9IjEzLjE4IiB5MT0iMTMuMDEiIHgyPSI4LjYzIiB5Mj0iNC4zOCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzE5ODhkOSIgLz48c3RvcCBvZmZzZXQ9IjAuOSIgc3RvcC1jb2xvcj0iIzU0YWVmMCIgLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0iYTQ3ZDcxMzgtMDg0YS00NzFkLThkNjMtNzQ0ZTc1YjllOGEzIiB4MT0iMTEuMjIiIHkxPSIxMC41IiB4Mj0iMTQuMzciIHkyPSIxNS45MyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIG9mZnNldD0iMC4xIiBzdG9wLWNvbG9yPSIjNTRhZWYwIiAvPjxzdG9wIG9mZnNldD0iMC4yOSIgc3RvcC1jb2xvcj0iIzRmYWJlZSIgLz48c3RvcCBvZmZzZXQ9IjAuNTEiIHN0b3AtY29sb3I9IiM0MWEyZTkiIC8+PHN0b3Agb2Zmc2V0PSIwLjc0IiBzdG9wLWNvbG9yPSIjMmE5M2UwIiAvPjxzdG9wIG9mZnNldD0iMC44OCIgc3RvcC1jb2xvcj0iIzE5ODhkOSIgLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48dGl0bGU+SWNvbi1pZGVudGl0eS0yMjc8L3RpdGxlPjxnPjxwb2x5Z29uIHBvaW50cz0iMS4xNSAxMC4yMiA4LjkzIDE1LjI3IDE2Ljg1IDEwLjIxIDE3Ljg1IDExLjM2IDguOTMgMTcuMTEgMC4xNSAxMS4zNyAxLjE1IDEwLjIyIiBmaWxsPSIjNTBlNmZmIiAvPjxwb2x5Z29uIHBvaW50cz0iMS43MyA5LjU4IDguOTMgMSAxNi4yOCA5LjU5IDguOTMgMTQuMjMgMS43MyA5LjU4IiBmaWxsPSIjZmZmIiAvPjxwb2x5Z29uIHBvaW50cz0iOC45MyAxIDguOTMgMTQuMjMgMS43MyA5LjU4IDguOTMgMSIgZmlsbD0iIzUwZTZmZiIgLz48cG9seWdvbiBwb2ludHM9IjguOTMgMSA4LjkzIDE0LjIzIDE2LjI4IDkuNTkgOC45MyAxIiBmaWxsPSJ1cmwoI2JiNjdiMTU0LWFmOGYtNGE1My1hOWNlLWFhMDQ2YjkzOThlOSkiIC8+PHBvbHlnb24gcG9pbnRzPSI4LjkzIDcuODMgMTYuMjggOS41OSA4LjkzIDE0LjIzIDguOTMgNy44MyIgZmlsbD0iIzUzYjFlMCIgLz48cG9seWdvbiBwb2ludHM9IjguOTMgMTQuMjMgMS43MyA5LjU4IDguOTMgNy44MyA4LjkzIDE0LjIzIiBmaWxsPSIjOWNlYmZmIiAvPjxwb2x5Z29uIHBvaW50cz0iOC45MyAxNy4xMSAxNy44NSAxMS4zNiAxNi44NSAxMC4yMSA4LjkzIDE1LjI3IDguOTMgMTcuMTEiIGZpbGw9InVybCgjYTQ3ZDcxMzgtMDg0YS00NzFkLThkNjMtNzQ0ZTc1YjllOGEzKSIgLz48Zz48cGF0aCBpZD0iZTE4OWE2MWYtNjMxYS00MTIyLWJiMmItMDc5ZTg2MDA0ZDk2IiBkPSJNMTYuMzIsMTEuODhhMS4xNiwxLjE2LDAsMCwwLDAtMS42NWgwbC0yLTJhMS4xNiwxLjE2LDAsMCwwLTEuNjQsMGgwbC0yLDJhMS4xOCwxLjE4LDAsMCwwLDAsMS42NWwxLjY3LDEuNjdhLjMyLjMyLDAsMCwxLC4wOS4yM3YzLjFhLjM2LjM2LDAsMCwwLC4xMi4yOGwuNzYuNzZhLjI1LjI1LDAsMCwwLC4zNywwbC43My0uNzNoMGwuNDQtLjQ0YS4xNS4xNSwwLDAsMCwwLS4yMWwtLjMxLS4zMWEuMTYuMTYsMCwwLDEsMC0uMjRsLjMxLS4zMWEuMTYuMTYsMCwwLDAsMC0uMjJsLS4zMS0uMzFhLjE1LjE1LDAsMCwxLDAtLjIzbC4zMS0uMzJhLjE1LjE1LDAsMCwwLDAtLjIxbC0uNDQtLjQ0di0uMTZaTTEzLjUsOC43MWEuNjYuNjYsMCwxLDEtLjY2LjY2LjY2LjY2LDAsMCwxLC42Ni0uNjZaIiBmaWxsPSIjZmZjYTAwIiAvPjxwYXRoIGlkPSJmYjcwMzNlZS00NjUwLTQ4ODYtODBjNy1lZGRmNjI1NjBmODUiIGQ9Ik0xMywxN2gwYS4xNC4xNCwwLDAsMCwuMjQtLjExVjE0LjMzYS4xNi4xNiwwLDAsMC0uMDYtLjEzaDBhLjE0LjE0LDAsMCwwLS4yMi4xM3YyLjUxQS4xNS4xNSwwLDAsMCwxMywxN1oiIGZpbGw9IiNmZjkzMDAiIG9wYWNpdHk9IjAuNzUiIC8+PHJlY3QgaWQ9ImIxNjZiOGMyLWI5ZWUtNGMzZC1iZjdhLTc3YmQ1Y2UwNTcwYiIgeD0iMTEuOSIgeT0iMTAuOSIgd2lkdGg9IjMuMjkiIGhlaWdodD0iMC4zOSIgcng9IjAuMTgiIGZpbGw9IiNmZjkzMDAiIG9wYWNpdHk9IjAuNzUiIC8+PHJlY3QgaWQ9ImJhZjQzN2ZlLTM0ODMtNGEyNS05NGJhLTFlODRhNjRjZDJlYiIgeD0iMTEuOSIgeT0iMTEuNTMiIHdpZHRoPSIzLjI5IiBoZWlnaHQ9IjAuMzkiIHJ4PSIwLjE4IiBmaWxsPSIjZmY5MzAwIiBvcGFjaXR5PSIwLjc1IiAvPjwvZz48L2c+PC9zdmc+"
+         x="435" y="260" width="40" height="40"/>
+  <text x="485" y="277" font-size="13" font-weight="600" fill="#333">Managed Identity (UAMI)</text>
+  <text x="485" y="294" font-size="11" fill="#666">uamiTestSqlPolicy</text>
+  <text x="435" y="328" font-size="10" fill="#B8860B">managedIdentity.bicep | Contributor on RG</text>
+
+  <!-- Policy Assignment -->
+  <rect x="420" y="360" width="250" height="80" rx="8" fill="#fff" stroke="#E97132" stroke-width="1.5"/>
+  <image xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iZTBjMmEyZjAtZTY0Ny00ZjAxLWI5MWItYWZiN2JmMTUwNDBkIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImE3ZjczMWE5LTVjNTgtNDRmNC04MDM3LTNjMzYyN2U5ODAwOCIgeDE9IjguNDUiIHkxPSIxMS40NyIgeDI9IjguNDUiIHkyPSI2LjI0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMTk4YWIzIiAvPjxzdG9wIG9mZnNldD0iMC4xNiIgc3RvcC1jb2xvcj0iIzFmOWFjMiIgLz48c3RvcCBvZmZzZXQ9IjAuNSIgc3RvcC1jb2xvcj0iIzI5YmFkZSIgLz48c3RvcCBvZmZzZXQ9IjAuOCIgc3RvcC1jb2xvcj0iIzMwY2RlZiIgLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMzMmQ0ZjUiIC8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHRpdGxlPkljb24tbWFuYWdlLTMxNjwvdGl0bGU+PGVsbGlwc2UgY3g9IjguNDUiIGN5PSI4Ljg1IiByeD0iMi42IiByeT0iMi42MSIgZmlsbD0idXJsKCNhN2Y3MzFhOS01YzU4LTQ0ZjQtODAzNy0zYzM2MjdlOTgwMDgpIiAvPjxlbGxpcHNlIGN4PSIxNS43MyIgY3k9IjQuNzciIHJ4PSIxLjI3IiByeT0iMS4yOCIgZmlsbD0iIzMyYmVkZCIgLz48ZWxsaXBzZSBjeD0iMTUuNzMiIGN5PSI4Ljk1IiByeD0iMS4yNyIgcnk9IjEuMjgiIGZpbGw9IiMzMmJlZGQiIC8+PGVsbGlwc2UgY3g9IjE1LjczIiBjeT0iMTMuMTIiIHJ4PSIxLjI3IiByeT0iMS4yOCIgZmlsbD0iIzMyYmVkZCIgLz48ZWxsaXBzZSBjeD0iMTIuODMiIGN5PSI2LjkxIiByeD0iMS4yNyIgcnk9IjEuMjgiIGZpbGw9IiM1MGU2ZmYiIC8+PGVsbGlwc2UgY3g9IjEyLjgzIiBjeT0iMTEuMDkiIHJ4PSIxLjI3IiByeT0iMS4yOCIgZmlsbD0iIzUwZTZmZiIgLz48cGF0aCBkPSJNMi40MSw1LjU4QS4yNC4yNCwwLDAsMSwyLjUsNS41TDguMzIsMi4xMWMuMDgsMCw1LDIuNzgsNSwyLjc4YS4yNC4yNCwwLDAsMCwuMzYtLjIxVjMuNTlhLjI0LjI0LDAsMCwwLS4xMi0uMjFTOC40LjQ2LDguMzMuNUwxLjExLDQuNjQsMSw0LjcyWiIgZmlsbD0iIzk0OTQ5NCIgLz48cGF0aCBkPSJNMTMuMywxMy4xNCw4LjU2LDE1Ljg3YS4zNS4zNSwwLDAsMS0uMTEsMHYxLjZhLjIuMiwwLDAsMCwuMTEsMGw1LTIuODZhLjI0LjI0LDAsMCwwLC4xMi0uMlYxMy4zNUEuMjQuMjQsMCwwLDAsMTMuMywxMy4xNFoiIGZpbGw9IiM5NDk0OTQiIC8+PHBhdGggZD0iTTguNDUsMTUuOWEuMzEuMzEsMCwwLDEtLjEzLDBMMi41LDEyLjQ3YS4yMi4yMiwwLDAsMS0uMTItLjJWNS43YS4yNy4yNywwLDAsMSwwLS4xMkwxLDQuNzJhLjI4LjI4LDAsMCwwLDAsLjEzdjguMjdhLjI0LjI0LDAsMCwwLC4xMS4yMWw3LjIyLDQuMTRhLjI0LjI0LDAsMCwwLC4xMiwwWiIgZmlsbD0iI2IzYjNiMyIgLz48L3N2Zz4="
+         x="435" y="370" width="40" height="40"/>
+  <text x="485" y="387" font-size="13" font-weight="600" fill="#333">Policy Assignment</text>
+  <text x="485" y="404" font-size="11" fill="#666">Assigned at RG scope</text>
+  <text x="435" y="428" font-size="10" fill="#E97132">policyAssignment.bicep | Uses UAMI identity</text>
+
+  <!-- SQL Server -->
+  <rect x="740" y="250" width="370" height="190" rx="10" fill="#f0f7f7" stroke="#3B8686" stroke-width="1.5"/>
+  <image xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iYjFjZmU4NmMtZjAwYi00NTA3LWJjZTItNTBkMDdlNDVmZTk2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImIzOWRjZjgzLTE4N2UtNGM2NC05OGRmLTQzMWJiNjA4MDlkMiIgeDE9IjAuNSIgeTE9IjEwLjA0IiB4Mj0iMTMuMTgiIHkyPSIxMC4wNCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzAwNWJhMSIgLz48c3RvcCBvZmZzZXQ9IjAuMDciIHN0b3AtY29sb3I9IiMwMDYwYTkiIC8+PHN0b3Agb2Zmc2V0PSIwLjM2IiBzdG9wLWNvbG9yPSIjMDA3MWM4IiAvPjxzdG9wIG9mZnNldD0iMC41MiIgc3RvcC1jb2xvcj0iIzAwNzhkNCIgLz48c3RvcCBvZmZzZXQ9IjAuNjQiIHN0b3AtY29sb3I9IiMwMDc0Y2QiIC8+PHN0b3Agb2Zmc2V0PSIwLjgyIiBzdG9wLWNvbG9yPSIjMDA2YWJiIiAvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzAwNWJhMSIgLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48dGl0bGU+SWNvbi1kYXRhYmFzZXMtMTMyPC90aXRsZT48cGF0aCBkPSJNNi44NCw1LjA5Yy0zLjUsMC02LjM0LTEtNi4zNC0yLjNWMTVjMCwxLjI2LDIuNzksMi4yOCw2LjI1LDIuM2guMDljMy41LDAsNi4zNC0xLDYuMzQtMi4zVjIuNzlDMTMuMTgsNC4wNiwxMC4zNCw1LjA5LDYuODQsNS4wOVoiIGZpbGw9InVybCgjYjM5ZGNmODMtMTg3ZS00YzY0LTk4ZGYtNDMxYmI2MDgwOWQyKSIgLz48cGF0aCBkPSJNMTMuMTgsMi43OWMwLDEuMjctMi44NCwyLjMtNi4zNCwyLjNTLjUsNC4wNi41LDIuNzksMy4zNC40OSw2Ljg0LjQ5czYuMzQsMSw2LjM0LDIuMyIgZmlsbD0iI2U4ZThlOCIgLz48cGF0aCBkPSJNMTEuNywyLjZjMCwuODEtMi4xOCwxLjQ2LTQuODYsMS40NlMyLDMuNDEsMiwyLjYsNC4xNiwxLjE0LDYuODQsMS4xNCwxMS43LDEuOCwxMS43LDIuNiIgZmlsbD0iIzUwZTZmZiIgLz48cGF0aCBkPSJNNi44NCwyLjk0QTEyLDEyLDAsMCwwLDMsMy40OWExMS4yNSwxMS4yNSwwLDAsMCwzLjg1LjU3LDExLjI1LDExLjI1LDAsMCwwLDMuODUtLjU3QTEyLDEyLDAsMCwwLDYuODQsMi45NFoiIGZpbGw9IiMxOThhYjMiIC8+PHBhdGggZD0iTTEwLjc0LDExLjFWNy43Mkg5LjgxdjQuMTRoMi40NlYxMS4xWk0zLjU5LDkuNDNhMS45MiwxLjkyLDAsMCwxLS41MS0uMzFBLjQ0LjQ0LDAsMCwxLDMsOC44YS4zOC4zOCwwLDAsMSwuMTYtLjMxLjcyLjcyLDAsMCwxLC40Mi0uMTEsMS42NywxLjY3LDAsMCwxLDEsLjI5VjcuODFhMi42NywyLjY3LDAsMCwwLTEtLjE2QTEuNzQsMS43NCwwLDAsMCwyLjM4LDhhMS4xMywxLjEzLDAsMCwwLS40MS45YzAsLjUxLjMyLjkxLDEsMS4yMWEyLjksMi45LDAsMCwxLC42MS4zNi40LjQsMCwwLDEsLjE2LjMyLjM4LjM4LDAsMCwxLS4xNi4zMS43NS43NSwwLDAsMS0uNDUuMTJBMS42LDEuNiwwLDAsMSwyLDEwLjc3di45M2EyLjI5LDIuMjksMCwwLDAsMS4wNy4yMywyLDIsMCwwLDAsMS4xOC0uMzIsMS4xLDEuMSwwLDAsMCwuNDMtLjkyLDEsMSwwLDAsMC0uMjUtLjdBMi40MiwyLjQyLDAsMCwwLDMuNTksOS40M1pNOC43OSwxMWEyLjQsMi40LDAsMCwwLC4zMy0xLjI3LDIuMzIsMi4zMiwwLDAsMC0uMjUtMS4xLDEuODEsMS44MSwwLDAsMC0uNy0uNzUsMiwyLDAsMCwwLTEtLjI2LDIuMTgsMi4xOCwwLDAsMC0xLjA5LjI3LDEuODcsMS44NywwLDAsMC0uNzMuNzcsMi40MSwyLjQxLDAsMCwwLS4yNiwxLjE1LDIuMjYsMi4yNiwwLDAsMCwuMjQsMS4wNSwxLjgzLDEuODMsMCwwLDAsLjY4Ljc1LDIsMiwwLDAsMCwxLC4yOWwuODUsMUg5LjA1bC0xLjItMS4xMUExLjgxLDEuODEsMCwwLDAsOC43OSwxMVptLS45My0uMjZhMSwxLDAsMCwxLTEuNTMsMCwxLjUxLDEuNTEsMCwwLDEtLjI4LTEsMS40OCwxLjQ4LDAsMCwxLC4yOS0xLC45Mi45MiwwLDAsMSwuNzgtLjM3Ljg5Ljg5LDAsMCwxLC43NS4zNywxLjYyLDEuNjIsMCwwLDEsLjI3LDFBMS40NiwxLjQ2LDAsMCwxLDcuODYsMTAuNzdaIiBmaWxsPSIjZjJmMmYyIiAvPjxwYXRoIGQ9Ik0xNC44MSwxNy40OWwuMjQtLjc5LjQ3LS4yNy44MS4zNi41Mi0uNTNWMTYuMmwtLjM3LS43MS4yMi0uNS44MS0uMjkuMDksMHYtLjczbC0uMSwwLS44LS4yNC0uMjYtLjQ2LjM1LS44Mi0uNTMtLjUxSDE2LjJsLS43MS4zNkwxNSwxMmwtLjMyLS44OWgtLjc0bDAsLjExLS4yNC43OS0uNTEuMjItLjg3LS40LS41MS41My4wNS4xLjM4Ljc0LS4yLjUxTDExLjEsMTR2Ljc0bC4xMSwwLC43OS4yNC4yMi41MS0uMzkuODYuNTMuNTIuMDktLjA1Ljc0LS4zOC41MS4yLjM0Ljg5aC43M1ptLTEuMi0yLjM2YTEuMDYsMS4wNiwwLDEsMSwxLjQ5LTEuNTIsMS4wNiwxLjA2LDAsMCwxLTEuNDksMS41MloiIGZpbGw9IiM5NDk0OTQiIC8+PC9zdmc+"
+         x="755" y="260" width="32" height="32"/>
+  <text x="795" y="278" font-size="13" font-weight="600" fill="#2A6565">Azure SQL Server</text>
+  <text x="795" y="296" font-size="11" fill="#666">sqlpolicytest (conditional deploy)</text>
+  <text x="755" y="320" font-size="10" fill="#3B8686">sqlServer.bicep | AAD-only auth | System MI</text>
+
+  <!-- SQL Database (optional) -->
+  <g opacity="0.5">
+  <rect x="770" y="340" width="160" height="55" rx="6" fill="#fff" stroke="#3B8686" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <image xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iYTk2NzkyYjctY2UyOC00Y2EzLTk3NjctNGUwNjVlZjQ4MjBmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImVmMTZiZjlkLWE4YjYtNDE4MS1iNmNkLTY2ZmM1MjAzZjk1NiIgeDE9IjIuNTkiIHkxPSIxMC4xNiIgeDI9IjE1LjQxIiB5Mj0iMTAuMTYiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMwMDViYTEiIC8+PHN0b3Agb2Zmc2V0PSIwLjA3IiBzdG9wLWNvbG9yPSIjMDA2MGE5IiAvPjxzdG9wIG9mZnNldD0iMC4zNiIgc3RvcC1jb2xvcj0iIzAwNzFjOCIgLz48c3RvcCBvZmZzZXQ9IjAuNTIiIHN0b3AtY29sb3I9IiMwMDc4ZDQiIC8+PHN0b3Agb2Zmc2V0PSIwLjY0IiBzdG9wLWNvbG9yPSIjMDA3NGNkIiAvPjxzdG9wIG9mZnNldD0iMC44MiIgc3RvcC1jb2xvcj0iIzAwNmFiYiIgLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwMDViYTEiIC8+PC9saW5lYXJHcmFkaWVudD48cmFkaWFsR3JhZGllbnQgaWQ9ImJmMzg0NmMzLTRkNzQtNDc0My1hYjlhLWYzMzRjMjQ4YmQ5MiIgY3g9IjkuMzYiIGN5PSIxMC41NyIgcj0iNy4wNyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2YyZjJmMiIgLz48c3RvcCBvZmZzZXQ9IjAuNTgiIHN0b3AtY29sb3I9IiNlZWUiIC8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZTZlNmU2IiAvPjwvcmFkaWFsR3JhZGllbnQ+PC9kZWZzPjx0aXRsZT5JY29uLWRhdGFiYXNlcy0xMzA8L3RpdGxlPjxwYXRoIGQ9Ik05LDUuMTRjLTMuNTQsMC02LjQxLTEtNi40MS0yLjMyVjE1LjE4YzAsMS4yNywyLjgyLDIuMyw2LjMyLDIuMzJIOWMzLjU0LDAsNi40MS0xLDYuNDEtMi4zMlYyLjgyQzE1LjQxLDQuMTEsMTIuNTQsNS4xNCw5LDUuMTRaIiBmaWxsPSJ1cmwoI2VmMTZiZjlkLWE4YjYtNDE4MS1iNmNkLTY2ZmM1MjAzZjk1NikiIC8+PHBhdGggZD0iTTE1LjQxLDIuODJjMCwxLjI5LTIuODcsMi4zMi02LjQxLDIuMzJzLTYuNDEtMS02LjQxLTIuMzJTNS40Ni41LDksLjVzNi40MSwxLDYuNDEsMi4zMiIgZmlsbD0iI2U4ZThlOCIgLz48cGF0aCBkPSJNMTMuOTIsMi42M2MwLC44Mi0yLjIxLDEuNDgtNC45MiwxLjQ4UzQuMDgsMy40NSw0LjA4LDIuNjMsNi4yOSwxLjE2LDksMS4xNnM0LjkyLjY2LDQuOTIsMS40NyIgZmlsbD0iIzUwZTZmZiIgLz48cGF0aCBkPSJNOSwzYTExLjU1LDExLjU1LDAsMCwwLTMuODkuNTdBMTEuNDIsMTEuNDIsMCwwLDAsOSw0LjExYTExLjE1LDExLjE1LDAsMCwwLDMuODktLjU4QTExLjg0LDExLjg0LDAsMCwwLDksM1oiIGZpbGw9IiMxOThhYjMiIC8+PHBhdGggZD0iTTEyLjksMTEuNFY4SDEydjQuMTNoMi40NlYxMS40Wk01Ljc2LDkuNzNhMS44MywxLjgzLDAsMCwxLS41MS0uMzEuNDQuNDQsMCwwLDEtLjEyLS4zMi4zNC4zNCwwLDAsMSwuMTUtLjMuNjguNjgsMCwwLDEsLjQyLS4xMiwxLjYyLDEuNjIsMCwwLDEsMSwuMjlWOC4xMWEyLjU4LDIuNTgsMCwwLDAtMS0uMTYsMS42NCwxLjY0LDAsMCwwLTEuMDkuMzQsMS4wOCwxLjA4LDAsMCwwLS40Mi44OWMwLC41MS4zMi45MSwxLDEuMjFhMi44OCwyLjg4LDAsMCwxLC42Mi4zNi40Mi40MiwwLDAsMSwuMTUuMzIuMzguMzgsMCwwLDEtLjE2LjMxLjgxLjgxLDAsMCwxLS40NS4xMSwxLjY2LDEuNjYsMCwwLDEtMS4wOS0uNDJWMTJhMi4xNywyLjE3LDAsMCwwLDEuMDcuMjQsMS44OCwxLjg4LDAsMCwwLDEuMTgtLjMzQTEuMDgsMS4wOCwwLDAsMCw2Ljg0LDExYTEuMDUsMS4wNSwwLDAsMC0uMjUtLjdBMi40MiwyLjQyLDAsMCwwLDUuNzYsOS43M1pNMTEsMTEuMzJhMi4zNCwyLjM0LDAsMCwwLC4zMy0xLjI2QTIuMzIsMi4zMiwwLDAsMCwxMSw5YTEuODEsMS44MSwwLDAsMC0uNy0uNzUsMiwyLDAsMCwwLTEtLjI2LDIuMTEsMi4xMSwwLDAsMC0xLjA4LjI3QTEuODYsMS44NiwwLDAsMCw3LjQ5LDlhMi40NiwyLjQ2LDAsMCwwLS4yNiwxLjE0LDIuMjYsMi4yNiwwLDAsMCwuMjQsMSwxLjc2LDEuNzYsMCwwLDAsLjY5Ljc0LDIuMDYsMi4wNiwwLDAsMCwxLC4zbC44NiwxaDEuMjFMMTAsMTIuMDhBMS43OSwxLjc5LDAsMCwwLDExLDExLjMyWk0xMCwxMS4wN2EuOTQuOTQsMCwwLDEtLjc2LjM1LjkyLjkyLDAsMCwxLS43Ni0uMzYsMS41MiwxLjUyLDAsMCwxLS4yOS0xLDEuNTMsMS41MywwLDAsMSwuMjktMSwxLDEsMCwwLDEsLjc4LS4zNy44Ny44NywwLDAsMSwuNzUuMzcsMS42MiwxLjYyLDAsMCwxLC4yNywxQTEuNDYsMS40NiwwLDAsMSwxMCwxMS4wN1oiIGZpbGw9InVybCgjYmYzODQ2YzMtNGQ3NC00NzQzLWFiOWEtZjMzNGMyNDhiZDkyKSIgLz48L3N2Zz4="
+         x="785" y="348" width="28" height="28"/>
+  <text x="820" y="365" font-size="12" font-weight="600" fill="#333">SQL Databases</text>
+  <text x="820" y="382" font-size="10" fill="#666">Basic tier (array param)</text>
+  </g>
+
+  <!-- Firewall notes -->
+  <text x="770" y="415" font-size="10" fill="#3B8686">Firewall: AllowAllAzureIPs + AllowClientIP</text>
+  <text x="770" y="430" font-size="10" fill="#3B8686">AAD Admin: SqlDbAdmins group</text>
+
+  <!-- Bicep files box (bottom of RG) -->
+  <rect x="420" y="460" width="350" height="120" rx="8" fill="#f8f8f8" stroke="#aaa" stroke-width="1"/>
+  <text x="440" y="482" font-size="12" font-weight="600" fill="#333">Bicep Template (infra/main.bicep)</text>
+  <text x="440" y="500" font-size="10" fill="#666">targetScope = 'subscription'</text>
+  <text x="440" y="516" font-size="10" fill="#0078D4">Module 1: policyDefinition.bicep (subscription)</text>
+  <text x="440" y="532" font-size="10" fill="#FFB900">Module 2: managedIdentity.bicep (RG)</text>
+  <text x="440" y="548" font-size="10" fill="#E97132">Module 3: policyAssignment.bicep (RG)</text>
+  <text x="440" y="564" font-size="10" fill="#3B8686">Module 4: sqlServer.bicep (RG, conditional)</text>
+
+  <!-- ================================================================== -->
+  <!-- FLOW ARROWS -->
+  <!-- ================================================================== -->
+
+  <!-- Phase 1: deploy.ps1 → Entra ID groups -->
+  <path d="M 294 190 L 294 298" fill="none" stroke="#744DA9" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
+  <circle cx="294" cy="225" r="12" fill="#744DA9"/>
+  <text x="294" y="230" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">1</text>
+  <text x="309" y="260" font-size="10" fill="#744DA9">Ensure groups</text>
+  <text x="309" y="274" font-size="10" fill="#744DA9">(MS Graph API)</text>
+
+  <!-- Phase 2: deploy.ps1 → Deployment Stack -->
+  <path d="M 330 130 L 388 130" fill="none" stroke="#0078D4" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <circle cx="360" cy="115" r="12" fill="#0078D4"/>
+  <text x="360" y="120" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">2</text>
+  <text x="343" y="108" font-size="10" fill="#0078D4">az stack sub create</text>
+
+  <!-- Deployment Stack → deploys modules -->
+  <line x1="530" y1="184" x2="530" y2="460" stroke="#0078D4" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#arrow-blue)"/>
+  <text x="538" y="353" font-size="10" fill="#0078D4">deploys</text>
+
+  <!-- Deployment Stack → Policy Definition -->
+  <line x1="670" y1="140" x2="698" y2="140" stroke="#E97132" stroke-width="1.2" marker-end="url(#arrow-orange)"/>
+  <text x="674" y="132" font-size="9" fill="#E97132">creates</text>
+
+  <!-- Deployment Stack → RG resources (MI, Policy Assignment, SQL) — three parallel vertical lanes -->
+  <path d="M 467 184 L 467 248" fill="none" stroke="#FFB900" stroke-width="1.2" marker-end="url(#arrow-yellow)"/>
+  <path d="M 593 184 L 593 358" fill="none" stroke="#E97132" stroke-width="1.2" marker-end="url(#arrow-orange)"/>
+  <path d="M 650 184 Q 750 200 805 248" fill="none" stroke="#3B8686" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <!-- Phase 3: deploy.ps1 → UAMI added to SqlDbAdmins -->
+  <path d="M 100 190 L 100 348" fill="none" stroke="#00B7C3" stroke-width="1.5" marker-end="url(#arrow-cyan)"/>
+  <circle cx="75" cy="288" r="12" fill="#00B7C3"/>
+  <text x="75" y="293" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">3</text>
+  <text x="45" y="310" font-size="10" fill="#00B7C3">Add UAMI</text>
+  <text x="45" y="324" font-size="10" fill="#00B7C3">to group</text>
+
+  <!-- Phase 4: deploy.ps1 → Directory Readers role -->
+  <path d="M 180 620 L 180 527" fill="none" stroke="#744DA9" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrow-purple)"/>
+  <circle cx="155" cy="570" r="12" fill="#744DA9"/>
+  <text x="155" y="575" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">4</text>
+
+  <!-- Phase 4 label below Entra box -->
+  <rect x="30" y="635" width="300" height="55" rx="6" fill="#fff" stroke="#744DA9" stroke-width="1" stroke-dasharray="4 2"/>
+  <text x="50" y="656" font-size="11" font-weight="600" fill="#744DA9">Phase 4: Grant Directory Readers</text>
+  <text x="50" y="672" font-size="10" fill="#888">To SQL Server system MI | Needs Global Admin</text>
+  <text x="50" y="684" font-size="10" fill="#888">Skipped if already granted or insufficient perms</text>
+
+  <!-- SQL Server → Directory Readers (needs this role) -->
+  <path d="M 740 370 Q 600 490 280 492" fill="none" stroke="#744DA9" stroke-width="1.2" stroke-dasharray="5 3" marker-end="url(#arrow-purple)"/>
+  <text x="680" y="455" font-size="10" fill="#744DA9" text-anchor="middle">SQL Server MI needs this role</text>
+
+  <!-- UAMI → SqlDbAdmins (member of) -->
+  <path d="M 420 290 Q 370 310 280 365" fill="none" stroke="#744DA9" stroke-width="1.2" marker-end="url(#arrow-purple)"/>
+  <text x="340" y="310" font-size="10" fill="#744DA9">member of</text>
+
+  <!-- ================================================================== -->
+  <!-- LEGEND -->
+  <!-- ================================================================== -->
+  <rect x="370" y="640" width="800" height="260" rx="8" fill="#fff" stroke="#ddd" stroke-width="1"/>
+
+  <!-- Deployment Phases -->
+  <text x="395" y="668" font-size="14" font-weight="600" fill="#333">Deployment Phases</text>
+
+  <circle cx="410" cy="695" r="10" fill="#888"/>
+  <text x="410" y="700" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">0</text>
+  <text x="428" y="700" font-size="10" fill="#666">Pre-flight: Verify az login + Entra ID permissions</text>
+
+  <circle cx="410" cy="722" r="10" fill="#744DA9"/>
+  <text x="410" y="727" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">1</text>
+  <text x="428" y="727" font-size="10" fill="#666">Phase 1: Ensure Entra ID security groups (MS Graph API)</text>
+
+  <circle cx="410" cy="749" r="10" fill="#0078D4"/>
+  <text x="410" y="754" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">2</text>
+  <text x="428" y="754" font-size="10" fill="#666">Phase 2: Deploy Azure resources (az stack sub create + polling)</text>
+
+  <circle cx="410" cy="776" r="10" fill="#00B7C3"/>
+  <text x="410" y="781" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">3</text>
+  <text x="428" y="781" font-size="10" fill="#666">Phase 3: Add UAMI to SqlDbAdmins group (idempotent)</text>
+
+  <circle cx="410" cy="803" r="10" fill="#744DA9"/>
+  <text x="410" y="808" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">4</text>
+  <text x="428" y="808" font-size="10" fill="#666">Phase 4: Grant Directory Readers to SQL Server MI (conditional)</text>
+
+  <!-- Components -->
+  <text x="850" y="668" font-size="14" font-weight="600" fill="#333">Components</text>
+
+  <rect x="850" y="682" width="12" height="12" rx="2" fill="#107C10"/>
+  <text x="868" y="693" font-size="10" fill="#666">deploy.ps1</text>
+  <rect x="960" y="682" width="12" height="12" rx="2" fill="#0078D4"/>
+  <text x="978" y="693" font-size="10" fill="#666">Deployment Stack</text>
+
+  <rect x="850" y="702" width="12" height="12" rx="2" fill="#E97132"/>
+  <text x="868" y="713" font-size="10" fill="#666">Azure Policy</text>
+  <rect x="960" y="702" width="12" height="12" rx="2" fill="#FFB900"/>
+  <text x="978" y="713" font-size="10" fill="#666">Managed Identity</text>
+
+  <rect x="850" y="722" width="12" height="12" rx="2" fill="#3B8686"/>
+  <text x="868" y="733" font-size="10" fill="#666">Azure SQL</text>
+  <rect x="960" y="722" width="12" height="12" rx="2" fill="#744DA9"/>
+  <text x="978" y="733" font-size="10" fill="#666">Entra ID</text>
+
+  <!-- Key notes -->
+  <text x="850" y="760" font-size="10" font-weight="600" fill="#888">Key Design Decisions</text>
+  <text x="850" y="778" font-size="10" fill="#888">All phases are idempotent — safe to re-run</text>
+  <text x="850" y="793" font-size="10" fill="#888">Phase 2 uses --no-wait + polling for visibility</text>
+  <text x="850" y="808" font-size="10" fill="#888">Phase 4 degrades gracefully without admin perms</text>
+
+  <!-- Bicep template labels -->
+  <text x="400" y="835" font-size="10" font-weight="600" fill="#888">Bicep Modules</text>
+  <text x="400" y="852" font-size="10" fill="#888">main.bicep → policyDefinition.bicep, managedIdentity.bicep, policyAssignment.bicep, sqlServer.bicep</text>
+  <text x="400" y="867" font-size="10" fill="#888">Parameters: main.bicepparam (resourceGroupName, managedIdentityName, aadAdminGroupName, sqlServerName, ...)</text>
+  <text x="400" y="882" font-size="10" fill="#888">Outputs: managedIdentityPrincipalId, managedIdentityResourceId, policyAssignmentId, sqlServerPrincipalId</text>
+
+</svg>
